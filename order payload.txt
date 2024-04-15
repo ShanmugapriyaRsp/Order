@@ -34,3 +34,10 @@ curl --location 'http://localhost:8081/saveOrders' \
 
 curl --location 'http://localhost:8081/getOrders' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWRodSIsImlhdCI6MTcxMjc1MDAyMiwiZXhwIjoxNzEyODM2NDIyfQ.bcQ6kOBjNpLnENPJ4dltvFK498J__w-OFoRTNbTQUtc'
+
+
+Angular cheatsheat
+https://medium.com/@sureshkumar_95502/angular-cheat-sheet-b542fc75ddfd
+
+Sprinboot cheatsheat
+https://medium.com/@sureshkumar_95502/microservices-spring-cloud-cheat-sheet-3546ae0ff5
