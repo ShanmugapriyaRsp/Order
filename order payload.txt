@@ -1,0 +1,36 @@
+curl --location 'http://localhost:8080/auth/login' \
+--header 'Content-Type: application/json' \
+--data '{
+    "userName":"Padhu",
+    "password":"password2"
+}'
+
+
+curl --location 'http://localhost:8080/auth/Register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Shanmugapriya",
+    "email": "spravi@gmail.com",
+    "roles": "ADMIN_ROLES",
+    "password":"password"
+}'
+
+curl --location 'http://localhost:8080/auth/getUsers' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJSYXZpcyIsImlhdCI6MTcxMjMwMTM2MSwiZXhwIjoxNzEyMzAzMTYxfQ.0K7f7cGK55mQ-dG2CoJpCQIxVW5_i655PRpaSyB_Nag' \
+--data ''
+
+
+
+curl --location 'http://localhost:8081/saveOrders' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWRodSIsImlhdCI6MTcxMjY4ODY0NCwiZXhwIjoxNzEyNzc1MDQ0fQ.omvTEWHCWyRQ4PO15gTss4lfy2YglunDpNhuwh-nDKg' \
+--data '{
+    
+    "customerName": "T-Shirt",
+    "orderDate": "2024-04-03T11:30:45Z",
+    "totalAmount": 150.0
+}'
+
+
+curl --location 'http://localhost:8081/getOrders' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQYWRodSIsImlhdCI6MTcxMjc1MDAyMiwiZXhwIjoxNzEyODM2NDIyfQ.bcQ6kOBjNpLnENPJ4dltvFK498J__w-OFoRTNbTQUtc'
