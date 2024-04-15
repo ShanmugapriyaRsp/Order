@@ -1,0 +1,7 @@
+body{
+  background-image: url("https://blog-frontend.envato.com/cdn-cgi/image/width=2560,quality=75,format=auto/uploads/sites/2/2022/04/E-commerce-App-JPG-File-scaled.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-size: cover;
+}

@@ -1,0 +1,29 @@
+.card {
+    padding: 20px;
+    border: 1px solid #125266;
+    overflow: auto;
+    resize: both;
+  }
+.container{
+      padding-top: 100px;
+  }
+body{
+      padding-top: 200px;
+}
+  
+h1{
+  font-weight: bold;
+  text-align: center;
+      background: linear-gradient(to right,rgb(67,124,205),rgb(69,214,202));
+      background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: fade 1s ease-in 1s;
+}
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

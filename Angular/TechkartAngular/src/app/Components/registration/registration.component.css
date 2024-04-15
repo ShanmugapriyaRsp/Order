@@ -1,0 +1,13 @@
+.container{
+    padding-top: 75px ;
+}
+.card{
+padding: 20px;
+}
+h1{
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(to right,rgb(67,124,205),rgb(69,214,202));
+    background-clip: text;
+        -webkit-text-fill-color: transparent;
+}

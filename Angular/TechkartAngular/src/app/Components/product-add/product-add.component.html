@@ -1,0 +1,77 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-7 ">
+            <div class="card shadow-lg">
+                <div class="card-header">
+                    <h1>Product Register</h1>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" formControlName="name" class="form-control"
+                                [ngClass]="{ 'is-invalid':registerForm.get('name').touched && registerForm.get('name').invalid}" />
+                            <div *ngIf="f.name.errors" class="invalid-feedback">
+                                <div *ngIf="f.name.errors.required">Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="brand">Brand</label>
+                            <input type="text" formControlName="brand" class="form-control"
+                                [ngClass]="{ 'is-invalid':registerForm.get('brand').touched && registerForm.get('brand').invalid}" />
+                            <div *ngIf="f.brand.errors" class="invalid-feedback">
+                                <div *ngIf="f.brand.errors.required">Brand is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">price</label>
+                            <div class="input-group">
+                                <div class="input-group-text">₹</div>
+                                <input type="number" formControlName="price" class="form-control"
+                                    [ngClass]="{ 'is-invalid':registerForm.get('price').touched && registerForm.get('price').invalid}" />
+                                <div class="input-group-text">.00</div>
+                                <div *ngIf="f.price.errors" class="invalid-feedback">
+                                    <div *ngIf="f.price.errors.required">Price is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <input type="text" formControlName="category" class="form-control"
+                                [ngClass]="{ 'is-invalid': registerForm.get('category').touched && registerForm.get('category').invalid}" />
+                            <div *ngIf="f.category.errors" class="invalid-feedback">
+                                <div *ngIf="f.category.errors.required">Category is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea type="text" formControlName="description" class="form-control"
+                                [ngClass]="{ 'is-invalid':registerForm.get('description').touched && registerForm.get('description').invalid}"></textarea>
+                            <div *ngIf="f.description.errors" class="invalid-feedback">
+                                <div *ngIf="f.description.errors.required">Description is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="imgUrl">Img Url</label>
+                            <input type="text" formControlName="imgUrl" class="form-control"
+                                [ngClass]="{ 'is-invalid': registerForm.get('imgUrl').touched && registerForm.get('imgUrl').invalid}" />
+                            <div *ngIf="f.imgUrl.errors" class="invalid-feedback">
+                                <div *ngIf="f.imgUrl.errors.required">Img Url is required</div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <button [disabled]="registerForm.invalid" class="btn btn-primary" type="submit">
+                                Register
+                            </button>
+                            <a routerLink="/home" class="btn btn-link">Cancel</a>
+                            <button class="btn btn-light float-right" (click)="onReset()">clear</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

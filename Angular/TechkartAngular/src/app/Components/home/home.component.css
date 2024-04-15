@@ -1,0 +1,15 @@
+.img-background{
+  background-position: sticky;
+  height: 250px;
+  width: 100%;
+}
+.img-background img{
+  height: 100%;
+  width: 100%;  
+  text-align: center;
+  object-fit:contain;
+}
+.add{
+  float: right;
+ }
+

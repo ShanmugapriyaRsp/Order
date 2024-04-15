@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-7 ">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h1>Register</h1>
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" formControlName="firstName" class="form-control"
+                                [ngClass]="{ 'is-invalid':registerForm.get('firstName').touched && registerForm.get('firstName').invalid}" />
+                            <div *ngIf="f.firstName.errors" class="invalid-feedback">
+                                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" formControlName="lastName" class="form-control"
+                                [ngClass]="{ 'is-invalid':registerForm.get('lastName').touched && registerForm.get('lastName').invalid}" />
+                            <div *ngIf="f.lastName.errors" class="invalid-feedback">
+                                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" formControlName="age" class="form-control"
+                                [ngClass]="{ 'is-invalid':registerForm.get('age').touched && registerForm.get('age').invalid}" />
+                            <div *ngIf="f.age.errors" class="invalid-feedback">
+                                <div *ngIf="f.age.errors.required">Age is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select type="text" formControlName="gender" class="form-select"
+                                [ngClass]="{ 'is-invalid':registerForm.get('gender').touched && registerForm.get('gender').invalid}">
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Prefer not to mention</option>
+                            </select>
+                            <div *ngIf="f.gender.errors" class="invalid-feedback">
+                                <div *ngIf="f.gender.errors.required">Gender is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" formControlName="username" class="form-control"
+                                [ngClass]="{ 'is-invalid': registerForm.get('username').touched && registerForm.get('username').invalid}" />
+                            <div *ngIf="f.username.errors" class="invalid-feedback">
+                                <div *ngIf="f.username.errors.required">Username is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" formControlName="password" class="form-control"
+                                [ngClass]="{ 'is-invalid':registerForm.get('password').touched && registerForm.get('password').invalid}" />
+                            <div *ngIf="f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <input type="text" formControlName="address" class="form-control"
+                                [ngClass]="{ 'is-invalid':registerForm.get('address').touched && registerForm.get('address').invalid}" />
+                            <div *ngIf="f.address.errors" class="invalid-feedback">
+                                <div *ngIf="f.address.errors.required">Address is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactNumber" class="form-label">Contact Number</label>
+                            <div class="input-group">
+                                <div class="input-group-text">+91</div>
+                                <input type="number" formControlName="contactNumber" class="form-control"
+                                    [ngClass]="{ 'is-invalid':registerForm.get('contactNumber').touched && registerForm.get('contactNumber').invalid}" />
+                                <div *ngIf="f.contactNumber.errors" class="invalid-feedback">
+                                    <div *ngIf="f.contactNumber.errors.required">Contact Number is required</div>
+                                    <div *ngIf="f.contactNumber.errors.minlength || f.contactNumber.errors.maxlength">
+                                        Contact Number must contain 10 numbers</div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <button [disabled]="registerForm.invalid" class="btn btn-primary" type="submit">
+                                Register
+                            </button>
+                            <a routerLink="/" class="btn btn-link">Cancel</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

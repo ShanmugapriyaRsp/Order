@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col d-flex">
+            <button mat-button [matMenuTriggerFor]="menu" class="btn btn-lg shadow-lg">Filter</button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="isCollapsed = !isCollapsed" aria-controls="collapseBasic">
+                    By Brand</button>
+                <button mat-menu-item (click)="isCollapsed = !isCollapsed" aria-controls="collapseBasic">
+                    By Category</button>
+                <button mat-menu-item (click)="isCollapse = !isCollapse" aria-controls="collapseBasic">
+                    By Price</button>
+            </mat-menu>
+        </div>
+        <div class="col">
+            <div id="collapseBasic" [collapse]="isCollapse" [isAnimated]="true">
+                <div class="input-group">
+                    <div class="input-group-text">From</div>
+                    <input type="number" id="from" class="form-control" name="from" [(ngModel)]="from" />
+                    <div class="input-group-text">To</div>
+                    <input type="number" id="to" class="form-control" name="to" [(ngModel)]="to" />
+                    <button type="submit" class="btn btn-primary" (click)="filterByPrice();clearFilters()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline" (click)="isCollapse = !isCollapse;clearFilters()"
+                        aria-controls="collapseBasic">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
+                <div class="input-group">
+                    <div class="form-floating">
+                        <input type="search" placeholder="search" (input)="filterSearch($event)" class="form-control" />
+                        <label class="form-label" for="form1">Search</label>
+                    </div>
+                    <button type="button" class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline" (click)="isCollapsed = !isCollapsed"
+                        aria-controls="collapseBasic">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

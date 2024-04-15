@@ -1,0 +1,37 @@
+<app-header></app-header>
+<app-filter (newItemEvent)="addItem($event)"></app-filter>
+
+<div class="container">
+    <div class="row">
+        <div Class="col-12">
+            <button *ngIf="isAdmin()" type="button" class="btn btn-primary float-right" [routerLink]="['/productRegister']">
+                <mat-icon>add_circle</mat-icon> <span class="add">Add Product</span> 
+            </button>
+        </div>
+        <div class="col-md-4 mb-2 mt-3" *ngFor="let item of this.other.filteredValue | filter : searchData">
+            <div class="card h-100 shadow-lg">
+                <div class="img-background">
+                    <img src={{item.imgUrl}} class="card-img-top" alt="No image">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title font-weight-bold">{{item.name}}</h3>
+                    <p class="card-text">{{ item.description | slice: 0:80 }}...</p>
+                    <h6 class="card-text">{{item.brand}}</h6>
+                    <p class="card-text">{{item.category}}</p>
+                    <p class="card-text">
+                        <strong>{{item.price | currency:'INR' }}</strong>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary" type="button" (click)="OnAddToCart(item.productId)">Add to Cart</button>
+                    <div class="float-right btn-group">
+                        <button *ngIf="isAdmin()" class="btn btn-success " type="button"
+                            [routerLink]="['/productUpdate',item.productId]" data-toggle="tooltip"
+                            data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+                        <button *ngIf="isAdmin()" class="btn btn-danger" type="button" (click)="onDelete(item.productId)" data-toggle="tooltip"
+                            data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark bg-primary navbar-expand-md border-bottom shadow-sm">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="/home" class="navbar-brand">Tech Kart</a>
+            <a class="navbar-brand">Hi  {{userName}}!</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
+            aria-label="Expand Navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" [routerLink]="['/home']">
+                    <mat-icon title="Home"> home </mat-icon> </a> </li>
+                <li class="nav-item"> <a class="nav-link active" [routerLink]="['/cart']">
+                    <mat-icon title="Cart">shopping_cart</mat-icon> </a> </li>
+                <li  *ngIf="!isLoggedIn()" class="nav-item"> <a class="nav-link active" >Login</a> </li>
+                <li class="nav-item"><a class="nav-link active" (click)="logout()" [routerLink]="['/']">
+                    <mat-icon title="Logout">logout</mat-icon> </a></li>
+                <li class="nav-item"><a class="nav-link active" href="">             
+                  <mat-icon title="Profile"> perm_identity </mat-icon> </a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

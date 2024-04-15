@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h1>TechKart User Login</h1>
+                    <br>
+                    <form [formGroup]="form" (ngSubmit)="login()">
+                        <div class="form-group">
+                            <div class="form-floating">
+                                <input type="text" formControlName="username" class="form-control"
+                                    placeholder="Username"
+                                    [ngClass]="{ 'is-invalid': username.touched && username.invalid}" />
+                                <label for="username" class="form-label">User Name</label>
+                                <div *ngIf="f.username.errors" class="invalid-feedback">
+                                    <div *ngIf="f.username.errors.required">User Name is required</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-floating">
+                                <input type="password" formControlName="password" class="form-control"
+                                    placeholder="Password"
+                                    [ngClass]="{ 'is-invalid': password.touched && password.invalid}" />
+                                <label for="password" class="form-label">Password</label>
+                                <div *ngIf="f.password.errors" class="invalid-feedback">
+                                    <div *ngIf="f.password.errors.required">Password is required</div>
+                                    <div *ngIf="f.password.errors.minlength">Password must contain atleast 5 character
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="buttons text-center">
+                            <button [disabled]="form.invalid" class="btn btn-primary btn-block "
+                                type="submit">Login</button>
+                        </div>
+                        <br>
+                        <div class="text-center">
+                            <p>Not a member? <a routerLink="/registration">Sign up</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
